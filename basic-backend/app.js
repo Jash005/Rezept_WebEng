@@ -6,10 +6,12 @@ import path from "node:path";
 import { fileURLToPath } from "url";
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use("/api", apiRouter);
 
-const frontendPath = path.join(__dirname, "../basic-frontend/dist/dein-app-name");
+const frontendPath = path.join(__dirname, "../basic-frontend/dist/basic-frontend/browser");
 
 app.use(express.static(frontendPath));
 app.use((req, res) => {
