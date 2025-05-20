@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ export class ApiService {
   /* ====================================
           API
   ==================================== */
-  private readonly BASE_URL = 'http://localhost:3000/api';
+  private readonly BASE_URL = `${environment.apiUrl}/api`;
 
   private async getApiData<T>(
     authHeader: string,
